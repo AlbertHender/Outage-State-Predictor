@@ -39,11 +39,11 @@ Colons can be used to align columns.
 
 ## Data Cleaning
 
-...1. First, I dropped all columns I found to have a large number of missing values and then removed columns I found to be irrelevant to my proposed questions and only kept the columns I listed above. Those being, YEAR, MONTH, U.S._STATE, CLIMATE.REGION, OUTAGE.START.DATE, OUTAGE.START.TIME, OUTAGE.RESTORATION.DATE, OUTAGE.RESTORATION.TIME, CAUSE.CATEGORY, OUTAGE.DURATION, CUSTOMERS.AFFECTED, TOTAL.PRICE, TOTAL.SALES, TOTAL.CUSTOMERS.
+⋅⋅⋅1. First, I dropped all columns I found to have a large number of missing values and then removed columns I found to be irrelevant to my proposed questions and only kept the columns I listed above. Those being, YEAR, MONTH, U.S._STATE, CLIMATE.REGION, OUTAGE.START.DATE, OUTAGE.START.TIME, OUTAGE.RESTORATION.DATE, OUTAGE.RESTORATION.TIME, CAUSE.CATEGORY, OUTAGE.DURATION, CUSTOMERS.AFFECTED, TOTAL.PRICE, TOTAL.SALES, TOTAL.CUSTOMERS.
 
-...2. I then removed the first two rows of the dataset as they were unneccesary descriptions followed by then converting the 'Variables' row into the official columns for my dataframe
+⋅⋅⋅2. I then removed the first two rows of the dataset as they were unneccesary descriptions followed by then converting the 'Variables' row into the official columns for my dataframe
 
-...3. Lastly I replaced all 0's in the 'OUTAGE.DURATION' columns with np.nan as a way to exclude the missing values from being included in my Visualizations and future calculations.
+⋅⋅⋅3. Lastly I replaced all 0's in the 'OUTAGE.DURATION' columns with np.nan as a way to exclude the missing values from being included in my Visualizations and future calculations.
 
 # Data analysis
 
