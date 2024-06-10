@@ -1,9 +1,9 @@
-## Outage-State-Predictor
+# Outage-State-Predictor
 DSC80 Project for UCSD
 
 By Albert Henderson
 
-## Introduction
+# Introduction
 
 For this project, I will be analyzing a data set containing major power outages in the United State from January 2000 to July 2016. This dataset was obtained through Purdue University's Laboratory for Advancing Sustainable Critical Infrastructure, at https://engineering.purdue.edu/LASCI/research-data/outages.
 
@@ -35,9 +35,9 @@ Colons can be used to align columns.
 | CUSTOMERS.AFFECTED | Number of customers affected by the outage |
 | PCT.LAND | Percentage of the state that's land |
 
-## Data Cleaning and Analysis
+# Data Cleaning and Analysis
 
-# Data Cleaning
+## Data Cleaning
 
     1. First, I dropped all columns I found to have a large number of missing values and then removed columns I found to be irrelevant to my proposed questions and only kept the columns I listed above. Those being, YEAR, MONTH, U.S._STATE, CLIMATE.REGION, OUTAGE.START.DATE, OUTAGE.START.TIME, OUTAGE.RESTORATION.DATE, OUTAGE.RESTORATION.TIME, CAUSE.CATEGORY, OUTAGE.DURATION, CUSTOMERS.AFFECTED, TOTAL.PRICE, TOTAL.SALES, TOTAL.CUSTOMERS.
 
@@ -45,9 +45,9 @@ Colons can be used to align columns.
 
     3. Lastly I replaced all 0's in the 'OUTAGE.DURATION' columns with np.nan as a way to exclude the missing values from being included in my Visualizations and future calculations.
 
-## Data analysis
+# Data analysis
 
-# Univariate Analysis
+## Univariate Analysis
 
 I first performed an univariate Analysis to explore the yearly trend of the number of outages occuring and what region has the most outages in total
 
@@ -55,7 +55,7 @@ This first graph depicts the positive then negative trend in the number of power
 
 This graph shows the total number of power outages in the U.S seperated by 'CLIMATE REGION'
 
-# Bivariate Analysis
+## Bivariate Analysis
 
 Following my univariate analysis, I also performed bivariate analysis in an attempt to find any relationships between variables that may be present in the data. 
 
@@ -63,9 +63,9 @@ I started this analysis by taking a look at the 'TOTAL.SALES' and 'MONTH' variab
 
 I then did an analysis on the relationship between the 'OUTAGE.DURATION' and 'U.S._STATE' variables. I initially thought that states like California and New York would be the leading outliers due to their large populations. However after plotting the box plot it was shown that states, Michigan, Arizona, and Wisconsin were among the states containing some of the largest outliers. This told me that 'OUTAGE.DURATION' won't be the as strong of a predictor as I thought.
 
-# Aggregate analysis
+## Aggregate analysis
 
 To finish my data analysis I performed an aggregate analysis on the 'U.S._STATE' and 'CAUSE.CATEGORY' columns in order to get a visualization of the number of outages that occur in each states broken down by what types of outages occured in each state.
 
-## Assessment of Missingness
+# Assessment of Missingness
 
