@@ -95,7 +95,7 @@ I started this analysis by taking a look at the `TOTAL.SALES` and `MONTH` variab
 I then did an analysis on the relationship between the `OUTAGE.DURATION` and `U.S._STATE` variables. I initially thought that states like California and New York would be the leading outliers due to their large populations. However after plotting the box plot it was shown that states, Michigan, Arizona, and Wisconsin were among the states containing some of the largest outliers. This told me that `OUTAGE.DURATION` won`t be the as strong of a predictor as I thought.
 
 <iframe
-  src="assets/state.vs.duration.html"
+  src="assets/states.vs.duration.html"
   width="800"
   height="600"
   frameborder="0"
