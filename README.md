@@ -53,7 +53,21 @@ I first performed an univariate Analysis to explore the yearly trend of the numb
 
 This first graph depicts the positive then negative trend in the number of power outages happening each year from 2000-2016
 
+<iframe
+  src="assets/year_trend.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
 This graph shows the total number of power outages in the U.S seperated by `CLIMATE REGION`
+
+<iframe
+  src="assets/region_trend.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 ## Bivariate Analysis
 
@@ -61,11 +75,32 @@ Following my univariate analysis, I also performed bivariate analysis in an atte
 
 I started this analysis by taking a look at the `TOTAL.SALES` and `MONTH` variables expecting to spike in the `TOTAL.SALES` values during the summer months as this is during summer break where people have much more free time to be using electricity for activities such as playing video games or just watching television. My expectations were correct with a spike in `TOTAL.SALSE` being present between the months July through September which is when school resumes.
 
+<iframe
+  src="assets/month.vs.sales.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
 I then did an analysis on the relationship between the `OUTAGE.DURATION` and `U.S._STATE` variables. I initially thought that states like California and New York would be the leading outliers due to their large populations. However after plotting the box plot it was shown that states, Michigan, Arizona, and Wisconsin were among the states containing some of the largest outliers. This told me that `OUTAGE.DURATION` won`t be the as strong of a predictor as I thought.
+
+<iframe
+  src="assets/state.vs.duration.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 ## Aggregate analysis
 
 To finish my data analysis I performed an aggregate analysis on the `U.S._STATE` and `CAUSE.CATEGORY` columns in order to get a visualization of the number of outages that occur in each states broken down by what types of outages occured in each state.
+
+<iframe
+  src="assets/state_outages.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 # Assessment of Missingness
 
@@ -87,6 +122,13 @@ I start with the `POSTAL.CODE` column
 
 My observed test statistic was 0.39 and after performing a TVD permutation test I obtained a p-value of 0.0. These values are telling me that I can reject my null hypothesis as well as tell me that the distribution of the `POSTAL.CODE` column is significantly impacted by the missingness of values in `OUTAGE.DURATION`
 
+<iframe
+  src="assets/postal_test.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
 I next test the `CLIMATE.CATEGORY` column
 
 **Null Hypothesis**: The distribution of the `CLIMATE.CATEGORY` column is the same when `OUTAGE.DURATION` is missing vs when it`s no missing
@@ -94,6 +136,13 @@ I next test the `CLIMATE.CATEGORY` column
 **Alternate Hypothesis**: The distribution of the `CLIMATE.CATEGORY` column is different when `OUTAGE.DURATION` is missing vs when it`s no missing
 
 The observed test statistic was 0.0941 with my p-value being 0.072 after performing another TVD permutation test. With a p-value of 0.072 I can accept my null hypothesis and state that there is not significant evidence that the `OUTAGE.DURATION` column`s missingness isn`t dependent `CLIMATE.CATEGORY`
+
+<iframe
+  src="assets/climate_test.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 # Hypothesis Testing
 
@@ -114,4 +163,48 @@ I chose to do a permutation test for this hypothesis because I have two distinct
 After completing the permutation test I calculated a p-value of 0.154 which is larger than my propsed significance level of 0.05 meaning I can rejecy my null hypothesis. So in conclusion, there is not significane evidence to conclude that the northeastern region of the United States, on average, experiences similar durations of power outages compared the southern region. I think a reason for this is because of the northern regrion's overall larger population and urban enviornment causing more demand for electricity than the southern region which is more rural.
 
 The plot below shows the results of my testing
+
+<iframe
+  src="assets/empirical.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+# Framing a Prediction Problem
+
+My model will try to predict the region a power outage occured. This will be a classification model because we are only focusing on the location the power outage occured in.
+
+The metric I am using the evaluate my model is the accuracy, because all that matters in the classification model is how accurate it's predictions are about the location of the outage.
+
+At the time of prediction, we would know the  climate category, population, total price, total sales, and outage duration. These features will allow us to predict what the cause of a major power outage is.
+
+# Baseline Model
+
+My model is a RandomForest which I will be using for classification with the features climate category, population, total price, total sales, and outage duration to predict where a major power outage occured. These features will allow comapanies to better understand, given these features where an outage is likely to occur to better prepare for it.
+
+These features will be; `CLIMATE.CATEGORY` (nominal), `POPULATION` (quantitative), `TOTAL.PRICE` (quanititative), `TOTAL.SALES` (quantitative), and OUTAGE.DURATION (quantitative). My reasoning behind choosing these features is that `CLIMATE.CATEGORY` helps in narrowing down where in the U.S the outage can be, `POPULATION` helps narrow down regions due to some having a higher population than others, `TOTAL.PRICE` because some areas are more expensive than others, `TOTAL.SALES` same reasoning as `TOTAL.PRICE` and `CLIMATE.CATEGORY` since all regions of the U.S have varying climates compared to one another.
+
+The only encoding I performed was onehot encoding on the `CLIMATE.CATEGORY`.
+
+The baseline models performance was poor with having an accuracy of only %46.
+
+# Final Model
+
+My final model uses the same features as my baseline model however I engineered two new features from my orignally selected. I'm still using a RandomForest Classifier.
+
+I binarized the `TOTAL.PRICE` feature in order to categorizes locations as high or low priced inorder to add further classification to each observation. I also applied a standard scaler to `TOTAL.SALES` and `OUTAGE.DURATION` in order to have a normal distribution on these features and better identify outliers. Finally, I kept my original onehot encoding of the `CLIMATE.CATEGORY` column.
+
+I then used GridSearchCV (crossvalidation) to find the most optimal hyperparameters for my RandomForest. My hyperperameters were:
+
+criterion: ‘entropy’
+max_depth: None
+min_samples_split: 2
+
+After engineering new features and using the hyperperameters given from grid search cross validation my final model was able to acheive an accuracy of %89.
+
+
+# Fairness Analysis
+
+
 
