@@ -47,13 +47,13 @@ Colons can be used to align columns.
 
 Here are the first few rows of the cleaned dataframe
 
-|   YEAR |   MONTH | U.S._STATE   | POSTAL.CODE   | CLIMATE.REGION     | CLIMATE.CATEGORY   | OUTAGE.START.DATE                | OUTAGE.START.TIME            | OUTAGE.RESTORATION.DATE          | OUTAGE.RESTORATION.TIME      | CAUSE.CATEGORY     | OUTAGE.DURATION   | TOTAL.PRICE           | TOTAL.SALES   |   TOTAL.CUSTOMERS |    POPULATION |   CUSTOMERS.AFFECTED | PCT_LAND         |
-|-------:|--------:|:-------------|:--------------|:-------------------|:-------------------|:---------------------------------|:-----------------------------|:---------------------------------|:-----------------------------|:-------------------|:------------------|:----------------------|:--------------|------------------:|--------------:|---------------------:|:-----------------|
-|    nan |     nan | nan          | nan           | nan                | nan                | Day of the week, Month Day, Year | Hour:Minute:Second (AM / PM) | Day of the week, Month Day, Year | Hour:Minute:Second (AM / PM) | nan                | mins              | cents / kilowatt-hour | Megawatt-hour |     nan           | nan           |                  nan | %                |
-|   2011 |       7 | Minnesota    | MN            | East North Central | normal             | 2011-07-01 00:00:00              | 17:00:00                     | 2011-07-03 00:00:00              | 20:00:00                     | severe weather     | 3060              | 9.28                  | 6562520       |       2.5957e+06  |   5.34812e+06 |                70000 | 91.5926658691451 |
-|   2014 |       5 | Minnesota    | MN            | East North Central | normal             | 2014-05-11 00:00:00              | 18:38:00                     | 2014-05-11 00:00:00              | 18:39:00                     | intentional attack | 1                 | 9.28                  | 5284231       |       2.64074e+06 |   5.45712e+06 |                  nan | 91.5926658691451 |
-|   2010 |      10 | Minnesota    | MN            | East North Central | cold               | 2010-10-26 00:00:00              | 20:00:00                     | 2010-10-28 00:00:00              | 22:00:00                     | severe weather     | 3000              | 8.15                  | 5222116       |       2.58690e+06 |   5.3109e+06  |                70000 | 91.5926658691451 |
-|   2012 |       6 | Minnesota    | MN            | East North Central | normal             | 2012-06-19 00:00:00              | 04:30:00                     | 2012-06-20 00:00:00              | 23:00:00                     | severe weather     | 2550              | 9.19                  | 5787064       |       2.60681e+06 |   5.38044e+06 |                68200 | 91.5926658691451 |
+|   YEAR |   MONTH |    POPULATION | CLIMATE.CATEGORY   | CLIMATE.REGION     |   CUSTOMERS.AFFECTED | TOTAL.SALES   |
+|-------:|--------:|--------------:|:-------------------|:-------------------|---------------------:|:--------------|
+|    nan |     nan | nan           | nan                | nan                |                  nan | Megawatt-hour |
+|   2011 |       7 |   5.34812e+06 | normal             | East North Central |                70000 | 6562520       |
+|   2014 |       5 |   5.45712e+06 | normal             | East North Central |                  nan | 5284231       |
+|   2010 |      10 |   5.3109e+06  | cold               | East North Central |                70000 | 5222116       |
+|   2012 |       6 |   5.38044e+06 | normal             | East North Central |                68200 | 5787064       |
 
 # Data analysis
 
