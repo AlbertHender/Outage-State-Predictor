@@ -9,7 +9,7 @@ For this project, I will be analyzing a data set containing major power outages 
 
 This dataset contains various information about each power outage such as the State, climate, region, and postal code of the outage. As well as the number of people affected, the population of where it happened, and the cause of the major outage.
 
-The purpose behind this project is that I want to answer the question, what regions in the U.S are most impacted by power outages. This question is meaningful to me as it can give insight into what parts of the country should be given resources in order to improve their electrical infrastrucutre.
+The purpose behind this project is that I want to answer the question, what regions in the U.S are most heavily impacted by power outages. This question is meaningful to me as it can give insight into what parts of the country should be given resources in order to improve their electrical infrastrucutre.
 
 This dataset has 1537 rows and 57 columns, however I will only be using these columns for this project
 
@@ -43,7 +43,7 @@ Colons can be used to align columns.
 
 2. I then removed the first two rows of the dataset as they were unneccesary descriptions followed by then converting the `Variables` row into the official columns for my dataframe
 
-3. Lastly I replaced all 0`s in the `OUTAGE.DURATION` columns with np.nan as a way to exclude the missing values from being included in my Visualizations and future calculations.
+3. Lastly I replaced all 0s in the `OUTAGE.DURATION` columns with np.nan as a way to exclude the missing values from being included in my Visualizations and future calculations.
 
 Here are the first few rows of the cleaned dataframe
 
