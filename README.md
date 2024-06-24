@@ -1,5 +1,4 @@
 # Outage-State-Predictor
-DSC80 Project for UCSD
 
 By Albert Henderson
 
